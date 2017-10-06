@@ -1,0 +1,50 @@
+{
+    "pages": [
+        "pages/b/z/z",
+        "pages/b/c/c",
+        "pages/b/g/g",
+        "pages/b/e/e",
+        "pages/b/i/i",
+        "pages/b/a/a",
+        "pages/b/s/s",
+        "pages/u/f/f",
+        "pages/u/g/g",
+        "pages/g/w/w",
+        "pages/g/r/r"
+    ],
+    "window": {
+        "backgroundTextStyle": "dark",
+        "navigationBarBackgroundColor": "#096",
+        "navigationBarTitleText": "GG游戏圈",
+        "navigationBarTextStyle": "white",
+        "enablePullDownRefresh": false,
+        "backgroundColor": "#f2f2f2"
+    },
+    "tabBar": {
+        "color": "#666",
+        "selectedColor": "#096",
+        "backgroundColor": "#f6f6f6",
+        "borderStyle": "white",
+        "list": [{
+            "pagePath": "pages/b/z/z",
+            "text": "首页",
+            "iconPath": "assets/images/icons/index.png",
+            "selectedIconPath": "assets/images/icons/indexed.png"
+        }, {
+            "pagePath": "pages/b/c/c",
+            "text": "发现",
+            "iconPath": "assets/images/icons/game.png",
+            "selectedIconPath": "assets/images/icons/gameed.png"
+        }, {
+            "pagePath": "pages/g/r/r",
+            "text": "风云榜",
+            "iconPath": "assets/images/icons/rank.png",
+            "selectedIconPath": "assets/images/icons/ranked.png"
+        }]
+    },
+    "networkTimeout": {
+        "request": 10000,
+        "downloadFile": 10000
+    },
+    "debug": true
+}
