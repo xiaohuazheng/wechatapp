@@ -1,0 +1,64 @@
+page{
+    background-color: #fff;
+    height:100%;
+}
+.container{
+    display: block;
+    padding-top: 1rpx;
+}
+.edit-layer{
+     height:100%;
+     z-index: 2;
+     padding-top: 1rpx;
+}
+.tool-bar{
+    position: relative;
+    display: -webkit-flex;
+    display: flex;
+    width:750rpx;
+    background: #fff;
+    padding-bottom:20rpx;
+}
+.tool-item {
+    flex: 1;
+    position: relative;
+    padding-top: 20rpx;
+    width: 120rpx;
+    text-align: center;
+}
+.edit-desc{
+    font-size: 32rpx;
+    z-index: 2;
+    height: 460rpx;
+}
+.edit-desc-wrap{
+    width: 710rpx;
+    padding: 20rpx;
+    background:#f2f2f2;
+}
+.edit-cancle{
+    font-size: 34rpx;
+    color: #666;
+    text-align: left;
+    padding-left: 30rpx;
+}
+.edit-send-word{
+    font-size: 34rpx;
+    color: #096;
+    text-align: right;
+    padding-right: 30rpx;
+}
+.submit-button{
+    color:#096;
+    border:1px solid #096;
+    border-radius: 0;
+    text-align: center;
+    font-size:40rpx;
+}
+.edit-desc-wrap {
+    width:710rpx;
+    height: 500rpx;
+    padding: 20rpx;
+    background:#f2f2f2;
+}
+

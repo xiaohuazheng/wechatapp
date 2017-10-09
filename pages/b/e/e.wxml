@@ -1,0 +1,20 @@
+<view class="container">
+
+    <view class="tool-bar">
+        <view class="tool-item" bindtap="navBack">
+            <view class="edit-cancle">取消</view>
+        </view> 
+        <view class="tool-item" bindtap="onSubmit">
+            <view class="edit-send-word">发送</view>
+        </view>
+    </view>
+
+    <view class="edit-desc-wrap">
+        <view class="edit-layer">             
+            <view class="edit-text">
+                <textarea bindinput="entryCtnt" placeholder="相遇即生缘，交流更增分" cursor-spacing="10" class="edit-desc" maxlength="-1"></textarea>
+            </view>
+        </view>
+    </view>
+    
+</view>
