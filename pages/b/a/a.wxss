@@ -1,0 +1,241 @@
+.invite-btn {
+    position:fixed;
+    width:320rpx;
+    height:90rpx;
+    background:#096;
+    border-radius:120rpx;
+    color:#fff;
+    line-height:90rpx;
+    z-index:10;
+    bottom:100rpx;
+    left:50%;
+    margin-left:-160rpx;
+    opacity:0.8;
+    transition: left .5s, opacity .5s;
+    padding-left: 0;
+    padding-right: 0;
+}
+.invite-btn.ivt-hide {
+    left: 112%;
+    opacity: 1;
+}
+.invite-btn .invite-img {
+    width: 60rpx;
+    height: 60rpx;
+    display: block;
+    float: left;
+    margin: 15rpx 0 0 10rpx;
+}
+.invite-btn .invite-txt {
+    font-size: 32rpx;
+    display: block;
+    float: left;
+    margin-left: 10rpx;
+}
+.invite-guide {
+    background: rgba(0, 0, 0, 0.5);
+}
+.cover-img-box {
+    position: relative;
+    width: 750rpx;
+    height: 360rpx;
+}
+.cover-img-box .cover-img {
+    display: block;
+    width: 750rpx;
+    height: 360rpx;
+}
+.cover-img-box .article-title {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    padding: 20rpx;
+    background: rgba(0, 153, 102, 0.4);
+    color: #fff;
+    font-size: 34rpx;
+    width: 714rpx;
+    line-height: 40rpx;
+}
+.finger-box {
+  position: absolute;
+  top: 10rpx;
+  right: 20rpx;
+  width: 320rpx;
+  height: 64rpx;
+  line-height: 64rpx;
+  color: #fff;
+}
+.finger-box .guide-txt {
+    display: block;
+    float: left;
+    font-size: 32rpx;
+    font-family: "microsoft yahei";
+}
+.finger-box .finger-pic {
+  width: 64rpx;
+  height: 64rpx;
+  display: block;
+  float: left;
+}
+
+.author-wrp{
+    position: relative;
+    width: 750rpx;
+    height: 120rpx;
+    background: #fff;
+    box-shadow:0 0 20rpx #aaa;
+}
+.author {
+    position: relative;
+    margin: 0 auto;
+    width: 100%;
+    height: 70rpx;
+    padding: 20rpx 0;
+}
+.author .avatar {
+    flex: 1;
+    width: 66rpx;
+    height: 66rpx;
+    margin-left: 40rpx;
+}
+
+.author .avatar .avatar-img {
+    display: inline-block;
+    width: 66rpx;
+    height: 66rpx;
+    border-radius: 100%;
+}
+.author .author-info{
+    flex: 5;
+    text-align: left;
+    padding-left: 15rpx;
+    line-height: 38rpx;
+}
+.author .author-info .author-name{
+    display: block;
+    font-size: 34rpx;
+    color: #096;
+    line-height: 68rpx;
+    height:76rpx;
+    width:380rpx;
+    overflow:hidden;
+}
+.author .favorite{
+    flex: 2;
+    padding-top: 5rpx;
+    font-size: 26rpx;
+    margin-right:20rpx;
+}
+.author .favorite .f-txt{
+    display: inline-block;
+    padding: 10rpx;
+    color: #096;
+    border: solid 6rpx #096;
+    border-radius: 6rpx;
+}
+.author .favorite .fed-txt {
+    color: #bbb;
+    border: solid 6rpx #bbb;
+}
+.one-content{
+    padding: 30rpx;
+    background: #fff;
+}
+.one-content .one-txt-bg {
+    position: relative;
+}
+.one-content .one-txt{
+    font-size: 32rpx;
+    color: #333;
+    line-height: 44rpx;
+}
+.one-content .one-img-bg {
+    position: relative;
+    padding: 10rpx 0;
+}
+.one-content .one-img{
+    width:680rpx;
+    height:500rpx;
+    margin:10rpx auto 0;
+    display:block;
+}
+.one-footer{
+    position: relative;
+    bottom: 0;
+    height: 70rpx;
+    background: #fff;
+    width: 670rpx;
+    padding: 20rpx 40rpx;
+}
+.one-footer.statistics{
+    height: 40rpx;
+    margin-top: 20rpx;
+}
+.one-footer .s-item{
+    flex: 1;
+    text-align: center;
+}
+.one-footer .s-item .s-img{
+    display: block;
+    margin: 0 auto;
+    width: 50rpx;
+    height: 50rpx;
+}
+.one-footer .s-item .s-txt{
+    display: block;
+    font-size: 30rpx;
+    color: #bebebe;
+}
+.wc-wrp {
+    box-shadow: 0 1px 2px #bebebe;
+    border-top: solid 1px #ebebeb;
+    border-bottom: solid 1px #ebebeb;
+    color: #999;
+    vertical-align: middle;
+    background: #f2f2f2;
+    padding: 15rpx 0;
+}
+.wc-wrp .wc-box {
+    background: #fff;
+    width: 720rpx;
+    height: 70rpx;
+    line-height: 70rpx;
+    margin: 0 auto;
+    border-radius: 10rpx;
+}
+.wc-wrp .wc-box .wc-icon{
+    width:60rpx;
+    height:60rpx;
+    margin-top:5rpx;
+    display:block;
+    float:left;
+    margin-left:10rpx;
+}
+.wc-wrp .wc-box .wc-place {
+    height: 70rpx;
+    line-height: 70rpx;
+    margin-left: 10rpx;
+    font-size: 26rpx;
+}
+
+.issue-item .issue-source .scan-share {
+    display: none;
+}
+
+.comment-box-title{
+    width:730rpx;
+    padding-left:20rpx;
+    height:60rpx;
+    line-height:60rpx;
+    text-align:left;
+    font-size:36rpx;
+    color:#333;
+    background:#f2f2f2;
+    margin-top:20rpx;
+}
+.comment-more{
+    float:right;
+    margin-right:20rpx;
+    font-size:30rpx;
+    color:#096;
+}
