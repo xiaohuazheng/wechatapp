@@ -1,0 +1,29 @@
+<view class="prevent-screen" hidden="{{!prevent}}"></view>
+<view class="container {{shareObj.share.length ? 'container-auto' : ''}}">
+  <block wx:if="{{shareObj.share.length}}">
+    <block wx:for="{{shareObj.share}}" wx:for-index="idx" wx:for-item="item" wx:key="circle">      
+      <view class="circle-item {{item.isTouchMoved ? 'm-active' : ''}}" data-index="{{idx}}" bindtouchstart="touchS" bindtouchmove="touchM">
+        <view class="circle" bindtap="circleTap" data-gid="{{item.id}}" data-index="{{idx}}">
+          <view class="circle-info">
+            <view class="circle-name">{{item.name}}</view>
+            <image mode="aspectFill" class="circle-img" src="{{item.icon}}"></image>
+          </view>
+          <view class="circle-con">
+            <view class="circle-abstract">分享Carry经验，Gank心得，团战攻略，游戏资讯。倾听大神多年DOTA旅程，那年，那战，那队友。天辉夜宴，三路拼杀，回头，泯然一笑，带上宝石，向前，开战！</view>
+            <view class="btn-box">
+              <view class="in-btn">进入圈子</view>
+            </view>       
+          </view>  
+        </view>
+      </view>
+    </block>
+
+    <view class="no-more">右滑展开&左滑收起</view>
+    <view class="tellus" data-type="contact" bindtap="goWe">告诉我你想分享的游戏圈>></view>
+  </block>
+  <view wx:elif="{{isLoading}}" class="loadingwrapper first-time-loading">
+    <view class="icon_load"></view>
+  </view>
+  <view wx:else class="no-data-title">网络异常，请稍后重试~<view class="reload-btn" bindtap="reload">点击重试</view></view>
+  
+</view>

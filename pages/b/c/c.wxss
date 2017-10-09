@@ -1,0 +1,129 @@
+.circle-item {
+  position: relative;
+  display: inline-block;
+  width: 230rpx;
+  overflow: visible;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+.circle-item.m-active {
+  width: 750rpx;
+}
+.circle {
+  position: relative;
+  display: inline-block;
+  width: 160rpx;
+  height: 160rpx;
+  overflow: hidden;
+  background: #fff;
+  padding: 0;
+  margin-top: 15rpx;
+  clear:both;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  margin-left: 70rpx;
+  border-radius: 100%;
+  background: -webkit-linear-gradient(left, rgba(0, 153, 97, 0.9), rgba(0, 153, 97, 0));
+  background: -o-linear-gradient(left, rgba(0, 153, 97, 0.9), rgba(0, 153, 97, 0));
+  background: linear-gradient(to right, rgba(0, 153, 97, 0.9), rgba(0, 153, 97, 0));
+}
+.m-active .circle {
+  width: 750rpx;
+  height: 228rpx;
+  margin-left: 0;
+  border-radius: 0%;
+}
+.circle .circle-name {
+  width: 160rpx;
+  height: 160rpx;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: -80rpx 0 0 -80rpx;
+  border-radius: 100%;
+  font-size: 30rpx;
+  line-height: 160rpx;
+  text-align: center;
+  background: rgba(0, 153, 102, 0.5);
+  color: #fff;
+}
+.circle .circle-img {
+  width: 160rpx;
+  height: 160rpx;
+  display: block;
+  border-radius: 100%;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+.m-active .circle .circle-img {
+  width: 228rpx;
+  height: 228rpx;
+  border-radius: 0%;
+}
+.circle .circle-info {
+  float: left;
+  position: relative;
+}
+.circle .circle-con {
+  position: relative;
+  margin-left: 30rpx;
+  float: left;
+  height: 0;
+  width: 0;
+  overflow: hidden;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+.m-active .circle .circle-con {
+  width: 480rpx;
+  height: 228rpx;
+}
+.circle .circle-abstract {
+  font-size: 24rpx;
+  width: 0;
+  margin-top: 10rpx;
+  overflow:hidden;
+  height: 0;
+  line-height: 35rpx;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+.m-active .circle .circle-abstract {
+  width: 480rpx;
+  height: 140rpx;
+}
+.circle .btn-box{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 480rpx;
+  height: 72rpx;
+  border-top:1rpx dotted #bebebe;
+}
+.circle .btn-box .in-btn {
+  font-size:26rpx;
+  margin-top: 10rpx;
+  float:right;
+  border-radius: 10rpx;
+  width:146rpx;
+  text-align:center;
+  height:48rpx;
+  line-height:52rpx;
+  background: #fff;
+  color: #096;
+  border: 2rpx solid #096;
+}
+
+.container .no-more {
+  margin-bottom: 0;
+}
+.container .tellus{
+  width: 440rpx;
+  height: 60rpx;
+  margin: 10rpx auto 20rpx;
+  text-align: center;
+  font-size: 32rpx;
+  line-height: 60rpx;
+  color: #666;
+  border-radius: 10rpx;
+}
