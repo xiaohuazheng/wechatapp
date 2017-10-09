@@ -1,0 +1,97 @@
+<import src="../../../tpl/ci/ci.wxml"/>
+
+<view class="prevent-screen" hidden="{{!prevent}}"></view>
+<view class="prevent-screen invite-guide" hidden="{{!showGuide}}" bindtap="hideGuide">
+    <view class="finger-box"><text class="guide-txt">点右上角分享转发</text><image class="finger-pic" src="../../../assets/images/whitefinger.png"></image></view>
+</view>
+<include src="../../../tpl/bb/bp.wxml" />
+
+<view class="container {{detail.title_img ? 'container-auto' : ''}}">
+    <block wx:if="{{detail.title_img}}">
+        <button class="invite-btn {{hideInvite ? 'ivt-hide' : ''}}" hover-class="none" open-type="share" bindtap="showGuide" bindtouchstart="touchSS" bindtouchmove="touchMS">
+            <image class="invite-img" src="../../../assets/images/invite.png"></image><text class="invite-txt">邀好友一起{{detail.article_type == 1 ? '吐槽' : '分享'}}</text>
+        </button>
+
+        <view class="cover-img-box">
+            <image class="cover-img" src="{{detail.title_img}}"></image>
+            <view class="article-title">{{detail.title}}</view>
+        </view>
+        <view class="author-wrp">
+            <view class="author flex-wrp">
+                <view class="avatar flex-item" bindtap="rUserTap" data-ggid="{{detail.user && detail.user.id}}">
+                    <image class="avatar-img" src="{{detail.user && detail.user.avatar}}"></image>
+                </view>
+                <view class="author-info flex-item" bindtap="rUserTap" data-ggid="{{detail.authorId}}">
+                    <text class="author-name">{{detail.user && detail.user.nick_name}}</text>
+                </view>
+                <view class="favorite flex-item">
+                    <text class="f-txt fed-txt" wx:if="{{detail.is_favorite}}" bindtap="unFavorite" data-aid="{{detail.id}}">已收藏</text>
+                    <text class="f-txt" wx:else bindtap="toFavorite" data-aid="{{detail.id}}">收藏</text>
+                </view>
+            </view>
+        </view>
+
+        <view class="one-content">
+            <block wx:for="{{ctnts}}" wx:for-index="idx" wx:for-item="item" wx:key="ctnt">
+                <view class="one-txt-bg" wx:if="{{item}}">
+                    <text class="one-txt" selectable>{{item}}</text>
+                </view>
+                <view class="one-img-bg" wx:if="{{imgs[idx] && imgs[idx].img}}">
+                    <image class="one-img" mode="aspectFill" bindtap="previewImg" data-src="{{imgs[idx].img}}" src="{{imgs[idx].img}}" style="{{imgs[idx].style}}"></image>
+                </view>
+            </block>
+        </view>
+
+        <view class="one-footer statistics flex-wrp">
+            <view class="s-item flex-item" bindtap="{{detail.is_upvote ? '' : 'toPretty'}}" data-aid="{{detail.id}}">
+                <text class="s-txt">{{detail.upvote_count || 0}}喜欢</text>
+            </view>
+            <view class="s-item flex-item">
+                <text class="s-txt">{{detail.scan_count || 0}}阅读</text>
+            </view>
+            <view class="s-item flex-item" bindtap="{{detail.comment_count ? 'moreComments' : ''}}" data-aid="{{detail.id}}" data-tab="hot">
+                <text class="s-txt">{{detail.comment_count || 0}}评论</text>
+            </view>
+            <view class="s-item flex-item" bindtap="{{detail.is_favorite ? '' : 'toFavorite'}}" data-aid="{{detail.id}}">
+                <text class="s-txt">{{detail.favorite_count || 0}}收藏</text>
+            </view>
+        </view>
+
+        <view class="one-footer flex-wrp">
+            <view class="s-item flex-item">
+                <image class="s-img {{detail.is_upvote ? '' : 'img-gray'}}" src="../../../assets/images/loved.png" bindtap="{{detail.is_upvote ? 'unPretty' : 'toPretty'}}" data-aid="{{detail.id}}"></image>
+            </view>
+            <view class="s-item flex-item">
+                <image class="s-img {{detail.is_favorite ? '' : 'img-gray'}}" src="../../../assets/images/gameed.png" bindtap="{{detail.is_favorite ? 'unFavorite' : 'toFavorite'}}" data-aid="{{detail.id}}"></image>
+            </view>
+        </view>
+
+        <view class="wc-wrp">
+            <view class="wc-box" bindtap="writeComment" data-aid="{{detail.id}}">
+                <image class="wc-icon" src="../../../assets/images/write.png"></image>
+                <view class="wc-place">相遇即生缘，交流更增分 - 输入你的评论</view>
+            </view>
+        </view>
+
+        <view wx:if="{{hotC.comment.length}}" class="comment-box-title">精彩评论<text class="comment-more" bindtap="moreComments" data-aid="{{detail.id}}" data-tab="hot">查看更多</text></view>
+        <template is="commentItem" data="{{...hotC}}"/>
+        
+        <view wx:if="{{hotC.comment.length>4}}" class="wc-wrp">
+            <view class="wc-box" bindtap="writeComment" data-aid="{{detail.id}}">
+                <image class="wc-icon" src="../../../assets/images/write.png"></image>
+                <view class="wc-place">相遇即生缘，交流更增分 - 输入你的评论</view>
+            </view>
+        </view>
+        <block wx:if="{{hotC.comment.length>0}}">
+            <view class="no-more" bindtap="moreComments" data-aid="{{detail.id}}" data-tab="time">查看最新评论</view>
+        </block>
+        
+    </block>
+    <view wx:elif="{{isLoading}}" class="loadingwrapper first-time-loading">
+        <view class="icon_load"></view>
+    </view>
+    <view wx:else class="no-data-title">网络异常，请稍后重试~<view class="reload-btn" bindtap="reload">点击重试</view></view>
+    
+    <include src="../../../tpl/bb/nb.wxml" />
+</view>
+
