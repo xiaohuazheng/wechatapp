@@ -1,0 +1,28 @@
+<include src="../../../tpl/bb/bp.wxml" />
+<view class="container">
+	<view class="user">
+        <view class="avatar flex-item">
+          <image class="avatar-img" src="../../../assets/images/icons/gameed.png"></image>
+        </view>
+        <view class="user-info flex-item">
+          <text class="nickname gg">GG游戏圈</text>
+        </view>
+        <view class="user-info flex-item">
+          <text class="nickname ggs">{{slogenInfo}}</text>
+        </view>  
+    </view>
+	<block wx:if="{{stateInfo.length}}">
+    	<block wx:for="{{stateInfo}}" wx:for-item="item" wx:for-index="idx" wx:key="uniq">
+		    <view class="us-title">{{item.title}}</view>
+		    <view class="us-box">
+		      <text class="us-item">{{item.content}}</text>
+		    </view>
+	    </block>
+        
+    	<view class="no-more">©2017-2017 GG游戏圈</view>
+    </block>
+    <view wx:elif="{{isLoading}}" class="loadingwrapper first-time-loading">
+    	<view class="icon_load"></view>
+  	</view>
+  	<view wx:else class="no-data-title">网络异常，请稍后重试~<view class="reload-btn" bindtap="reload">点击重试</view></view>
+</view>

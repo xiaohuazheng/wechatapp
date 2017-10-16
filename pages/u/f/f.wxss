@@ -1,0 +1,16 @@
+.share-item {
+  -webkit-transform: translateX(160rpx);
+  transform: translateX(160rpx);
+  margin-left: -160rpx;
+}
+.del-item {
+  width: 140rpx;
+  -webkit-transform: translateX(160rpx);
+  transform: translateX(160rpx);
+}
+.del-item.delete {
+  background: #ec1611;
+}
+.del-item.read {
+  background: #096;
+}

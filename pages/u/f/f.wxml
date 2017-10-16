@@ -1,0 +1,21 @@
+<import src="../../../tpl/si/si.wxml"/>
+<include src="../../../tpl/bb/tb.wxml" />
+<include src="../../../tpl/bb/bp.wxml" />
+<include wx:if="{{shareObj.isShowRead}}" src="../../../tpl/bb/eb.wxml" />
+
+<scroll-view scroll-y="true" class="container" scroll-top="{{scrollTop}}" bindscroll="scroll" lower-threshold="100" bindscrolltolower="lower">
+    <block wx:if="{{shareObj.share.length}}">
+        <template is="shareItem" data="{{...shareObj}}"/>
+        <view wx:if="{{hasNextPage}}" class="loadingwrapper">
+            <view class="icon_load"></view>
+        </view>
+        <view wx:else class="no-more">已经到最后啦</view>
+    </block>
+    <view wx:elif="{{isLoading}}" class="loadingwrapper first-time-loading">
+        <view class="icon_load"></view>
+    </view>
+    <view wx:elif="{{isNetError}}" class="no-data-title">网络异常，请稍后重试~<view class="reload-btn" bindtap="reload">点击重试</view></view>
+    <view wx:else class="no-data-title">{{shareObj.isShowDelete ? '暂无收藏' : '暂无分享'}}</view>
+    
+</scroll-view>
+

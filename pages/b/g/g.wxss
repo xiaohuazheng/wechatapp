@@ -1,0 +1,43 @@
+.ball {
+  bottom: 200rpx;
+}
+.top-ball {
+  bottom: 100rpx;
+}
+.sort-ball {
+  bottom: 100rpx;
+}
+.banner-box .banner-item {
+  height: 240rpx;
+  background: -webkit-linear-gradient(top, rgba(0, 153, 97, 0.6), rgba(0, 153, 97, 0));
+  background: -o-linear-gradient(top, rgba(0, 153, 97, 0.6), rgba(0, 153, 97, 0));
+  background: linear-gradient(to bottom, rgba(0, 153, 97, 0.6), rgba(0, 153, 97, 0));
+}
+.banner-box .banner-img {
+  height: 240rpx;
+}
+.circle-bar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 5rpx 0;
+  background: rgba(0, 0, 0, .3);
+  color: #fff;
+  text-align: left;
+}
+.circle-bar .circle-rank{
+  width:50rpx;
+  height:50rpx;
+  display:block;
+  position:absolute;
+  bottom:15rpx;
+  right:15rpx;
+}
+.circle-bar .circle-name{
+  padding:10rpx 20rpx;
+  display: block;
+  border: none;
+  font-size:36rpx;
+  font-weight:bold;
+}

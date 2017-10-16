@@ -1,0 +1,59 @@
+<view class="container {{rankItem.length ? 'container-auto' : ''}}">
+    <view class="nav-bar-box">
+        <scroll-view class="navbar" scroll-x="true" scroll-left="{{scrollLeft}}">
+            <block wx:for="{{circles}}" wx:for-index="idx" wx:for-item="item" wx:key="id">
+            <view class="navbar-item {{circles[idx].activeCls}}" id="{{idx}}" catchtap="selectCricle">
+                <view class="navbar-item-name">{{circles[idx].name}}</view>
+            </view>
+            </block>
+            <view class="navbar-item v-hidden">
+                <view class="navbar-item-name"></view>
+            </view>
+        </scroll-view>
+        <view class="circles-pop {{show_cls}}">
+            <block wx:for="{{circles}}" wx:for-index="idx" wx:for-item="item" wx:key="id">
+            <view class="circle-item {{circles[idx].activeCls ? 'circle-item-on' : ''}}" id="{{idx}}" catchtap="selectCricle">
+                <view class="circle-item-wrap">{{circles[idx].name}}</view>
+            </view>
+            </block>
+        </view>
+        <view class="navbar-arrow" bindtap="toggleNav">
+            <view class="navbar-arrow-wrap">
+                <image class="navbar-arrow-icon {{arrow_up}}" src="../../../assets/images/icon_arrow_down.png"></image>
+            </view>
+        </view>
+    </view>
+    <view class="page-head">
+        <text class="page-desc">这里是活跃用户们的贡献排行榜，他们为圈子贡献了不可磨灭的力量，让更多人得到快乐和成长。</text>
+    </view>
+        
+    <view class="rank-box {{scroll_from ? 'left' : 'right'}} {{rankItem.length ? 'on' : ''}}" bindtouchstart="onTouchS" bindtouchend="onTouchE">
+        <view class="rank-items" wx:if="{{rankItem.length}}">
+            <block wx:for="{{rankItem}}" wx:for-index="idx" wx:for-item="item" wx:key="id">
+                <view class="rank" bindtap="userHeadTap" data-ggid="{{item.userId}}">
+                    <view class="rank-num rank{{idx}}">{{idx+1}}</view>
+                    <view class="user-avatar">
+                        <image class="avatar-img" src="{{item.picUrl}}"></image>
+                    </view>
+                    <view class="rank-data">
+                        <view class="user-info">
+                            <text class="user-name">{{item.nickName}}</text>
+                        </view>
+                        <view class="user-meta">
+                            <text class="rank-meta dot">{{item.articleCount || 0}}分享&吐槽</text>
+                            <text class="rank-meta">{{item.commentCount || 0}}评论</text>
+                            <text class="rank-meta rank-score">{{item.scoreCount || 0}}声望</text>
+                        </view>
+                    </view>
+                </view>
+            </block>
+        </view>
+    </view>
+    <view wx:if="{{!rankItem.length && isLoading}}" class="loadingwrapper first-time-loading">
+        <view class="icon_load"></view>
+    </view>
+    <view wx:elif="{{isNetError}}" class="no-data-title">网络异常，请稍后重试~<view class="reload-btn" bindtap="reload">点击重试</view></view>
+
+    <view wx:if="{{rankItem.length == 20}}" class="no-more">排行榜只显示前20名</view>
+    <view wx:if="{{rankItem.length && rankItem.length < 20}}" class="no-more">左右滑动查看其它分类风云榜</view>
+</view>

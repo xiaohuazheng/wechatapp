@@ -1,0 +1,15 @@
+.no-data-title {
+    margin-top: 100rpx;
+    background: #f2f2f2;
+    color: #666;
+    margin-bottom: 0;
+}
+.us-title {
+	margin-top: 80rpx;
+    background: #f2f2f2;
+    color: #666;
+    margin-bottom: -15rpx;
+}
+.top-ball {
+    bottom: 100rpx;
+}

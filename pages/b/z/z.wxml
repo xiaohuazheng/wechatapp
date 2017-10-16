@@ -1,0 +1,92 @@
+<import src="../../../tpl/si/si.wxml"/>
+
+<view class="prevent-screen" hidden="{{!prevent}}"></view>
+<include src="../../../tpl/bb/sb.wxml" />
+<include src="../../../tpl/bb/eb.wxml" />
+<include src="../../../tpl/bb/tb.wxml" />
+
+<view class="uz-box {{showMe ? 'show-me' : ''}}">
+  <view class="container container-u" style="background:url({{userInfo.avatarUrl}}) no-repeat;background-size:contain;" bindtouchstart="touchSU" bindtouchmove="touchEU" bindtouchcancel="touchCU">
+    <view class="user-bg user-bg-z">
+      <view class="user">
+        <view class="avatar flex-item">
+          <image class="avatar-img" src="{{userInfo.avatarUrl || '../../../assets/images/head.png'}}" bindtap="{{userInfo.avatarUrl ? 'wxLogin' : 'updateWxInfo'}}"></image>
+        </view>
+        <view class="user-info flex-item">
+          <text class="nickname" bindtap="{{userInfo.nickName ? 'wxLogin' : 'updateWxInfo'}}">{{userInfo.nickName || '微信登录'}}</text>
+        </view>
+        
+        <view class="user-btn">
+          <view class="user-btn-item" bindtap="myS">
+              <view class="grey">分享&吐槽</view>
+              <view class="light">{{userInfo.articleCount || 0}}</view>
+          </view>
+          <view class="user-btn-item" data-type="score" bindtap="goWe">
+              <view class="grey">声望</view>
+              <view class="light">{{userInfo.score || 0}}</view>
+          </view>
+        </view>    
+      </view>
+
+      <view class="my">
+        <block wx:for="{{mine}}" wx:key="idx" wx:for-index="idx" wx:for-item="item">
+        <view class="my-item flex-wrp" bindtap="myBtnTap" data-url="{{item.url}}">
+            <view class="item-con flex-item">
+              <image class="item-icon" src="{{item.img}}"></image>
+            </view>
+            <view class="item-name flex-item">
+              <text class="item-txt">{{item.word}}</text>
+            </view>
+          </view>
+        </block>
+      </view>
+
+    </view>
+  </view>
+
+  <view class="container-i">
+    <view wx:if="{{showMe && showFinger}}" class="finger-box" catchtap="rtFinger"><image class="finger-pic" src="../../../assets/images/whitefinger.png"></image></view>
+    <view class="prevent-i" hidden="{{!showMe && !showP}}" bindtouchstart="touchSP"></view>
+
+    <view class="search-box">
+      <view class="flex-wrp">
+        <view class="i-user-head flex-item" bindtap="showMine">
+          <image class="i-avatar-img" src="{{userInfo.avatarUrl || '../../../assets/images/head.png'}}"></image>
+        </view>
+        <view class="search-frame flex-item">
+            <image class="search-icon" src="../../../assets/images/query.png" bindtap="searchTap"></image>
+            <input maxlength="15" confirm-type="search" placeholder="输入关键词，例：DOTA" value="{{searchValue}}" placeholder-class="search-placeholder" bindinput="searchInput" bindconfirm="searchTap"/>
+        </view>
+        <view class="search-button flex-item" bindtap="searchTap">搜索</view>
+      </view>
+    </view>
+
+    <scroll-view scroll-y="true" class="container {{shareObj.share.length ? '' : 'container-auto'}}" scroll-top="{{scrollTop}}" bindscroll="scroll" lower-threshold="100" bindscrolltolower="lower">
+      <view wx:if="{{banners.length}}" class="banner-box">
+        <swiper class="banner-item" autoplay="true" interval="3500" duration="500" indicator-dots="true" indicator-color="#bebebe" indicator-active-color="#096" circular="true">
+          <block wx:for="{{banners}}" wx:for-index="idx" wx:for-item="item" wx:key="banner">
+            <swiper-item bindtap="bannerTap" data-url="{{item.url}}">
+              <image src="{{item.img}}" class="banner-img"/>
+            </swiper-item>
+          </block>
+        </swiper>
+      </view>
+      <view class="share-container" bindtouchstart="touchSU" bindtouchmove="touchEU" bindtouchcancel="touchCU">
+        <block wx:if="{{shareObj.share.length}}">
+          <template is="shareItem" data="{{...shareObj}}"/>
+
+          <view wx:if="{{hasNextPage}}" class="loadingwrapper">
+            <view class="icon_load"></view>
+          </view>
+          <view wx:else class="no-more">已经到最后啦</view>
+        </block>
+        <view wx:elif="{{isLoading}}" class="loadingwrapper first-time-loading">
+            <view class="icon_load"></view>
+        </view>
+        <view wx:elif="{{isNetError}}" class="no-data-title">网络异常，请稍后重试~<view class="reload-btn" bindtap="reload">点击重试</view>
+        </view>
+        <view wx:else class="no-data-title">当前分类暂无数据~</view>
+      </view>
+    </scroll-view>
+  </view>
+</view>

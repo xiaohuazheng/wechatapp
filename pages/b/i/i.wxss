@@ -1,0 +1,31 @@
+.top-tab{
+  width: 750rpx;
+  height: 104rpx;
+  background: #fff;
+  color: #333;
+  font-size: 28rpx;
+  line-height: 100rpx;
+  box-shadow: 0 0 2rpx #096;
+  margin: 0 0 8rpx 0;
+  z-index: 10;
+  font-family:"microsoft yahei";
+  position:fixed;
+}
+.top-ball {
+  bottom: 100rpx;
+}
+.comment-box {
+  margin-top: 114rpx;
+}
+.no-data-title {
+  margin-top: 200rpx;
+}
+.toptab.active{
+  color: #096;
+  border-bottom: solid 2px #096;
+}
+.issue-item .issue-source .scan-share {
+  float: right;
+  margin-top:10rpx;
+}
+

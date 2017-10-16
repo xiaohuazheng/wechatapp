@@ -1,0 +1,37 @@
+<import src="../../../tpl/si/si.wxml"/>
+<view class="prevent-screen" hidden="{{!prevent}}"></view>
+<include src="../../../tpl/bb/tb.wxml" />
+<include src="../../../tpl/bb/sb.wxml" />
+<include src="../../../tpl/bb/bp.wxml" />
+
+<scroll-view scroll-y="true" class="container" bindscrolltolower="lower" lower-threshold="100" scroll-top="{{scrollTop}}" bindscroll="scroll">
+    <view class="banner-box">
+      <swiper class="banner-item" autoplay="true" duration="1000" circular="true">
+        <block wx:for="{{banner}}" wx:for-index="idx" wx:for-item="item" wx:key="banner">
+          <swiper-item bindtap="bannerTap" data-url="{{item.url}}">
+            <image src="{{item.img}}" class="banner-img"/>
+          </swiper-item>
+        </block>
+      </swiper>
+      <view class="circle-bar">
+        <text class="circle-name">{{circle.name}}</text>
+        <image src="../../../assets/images/circle_rank.png" data-gid="{{circle.id}}" class="circle-rank" catchtap="rankTap"/>
+      </view>
+    </view>
+    
+    <block wx:if="{{shareObj.share.length}}">
+      <template is="shareItem" data="{{...shareObj}}"/>
+
+      <view wx:if="{{hasNextPage}}" class="loadingwrapper">
+        <view class="icon_load"></view>
+      </view>
+      <view wx:else class="no-more">已经到最后啦</view>
+    </block>
+    <view wx:elif="{{isLoading}}" class="loadingwrapper first-time-loading">
+      <view class="icon_load"></view>
+    </view>
+    <view wx:elif="{{isNetError}}" class="no-data-title">网络异常，请稍后重试~<view class="reload-btn" bindtap="reload">点击重试</view></view>
+    <view wx:else class="no-data-title">当前圈子暂无数据，换个圈子看看吧~</view>
+
+  <include src="../../../tpl/bb/nb.wxml" />
+</scroll-view>

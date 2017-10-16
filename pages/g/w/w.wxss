@@ -1,0 +1,19 @@
+.container {
+	height: auto;
+	padding-top:1rpx;
+}
+.user .avatar {
+	margin-top: 20rpx;
+}
+.user .avatar-img {
+	width: 100rpx;
+	height: 100rpx;
+}
+.user .user-info .nickname.gg {
+	color: #333;
+	font-size: 36rpx;
+}
+.user .user-info .nickname.ggs {
+	color: #666;
+	padding:8rpx 20rpx 10rpx;
+}

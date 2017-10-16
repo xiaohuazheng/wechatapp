@@ -1,0 +1,18 @@
+.top-ball {
+  bottom: 100rpx;
+}
+.no-data-title {
+  width: 690rpx;
+  padding: 0 30rpx;
+}
+
+.user-shares {
+  width: 714rpx;
+  padding: 0 20rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  text-align: left;
+  font-size: 36rpx;
+  color: #666;
+  margin: 20rpx 0;
+}
