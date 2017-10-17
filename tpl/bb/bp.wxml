@@ -1,0 +1,3 @@
+<navigator wx:if="{{!isFirstQ}}" open-type="{{return_to ? 'redirect' : 'navigateBack'}}" url="{{return_to}}" class="top-left-back" hover-class="none">
+    <image class="tlb-img" src="../../../assets/images/backicon.png"></image>
+</navigator>

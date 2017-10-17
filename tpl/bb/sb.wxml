@@ -1,0 +1,5 @@
+<block wx:for="{{sort}}" wx:for-index="idx" wx:for-item="item" wx:key="sort">
+<view hidden="{{showTopBtn || showMe}}" class="ball sort-ball sort{{idx}} {{showSort ? 'on' : '' }}" bindtap="sortBallTap" data-index="{{idx}}" data-type="{{item.type}}">
+    <text class="sort-type">{{item.txt}}</text>
+</view>
+</block>

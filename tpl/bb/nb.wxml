@@ -1,0 +1,14 @@
+<view class="navbars flex-wrp" wx:if="{{isFirstQ}}">
+	<navigator class="flex-item" open-type="switchTab" url="../../b/z/z" hover-class="none">
+	    <image class="navb-img" src="../../../assets/images/icons/indexed.png"></image>
+	    <text class="navb-txt">首页</text>
+	</navigator>
+	<navigator class="flex-item" open-type="switchTab" url="../../b/c/c" hover-class="none">
+	    <image class="navb-img" src="../../../assets/images/icons/gameed.png"></image>
+	    <text class="navb-txt">发现</text>
+	</navigator>
+	<navigator class="flex-item" open-type="switchTab" url="../../g/r/r" hover-class="none">
+	    <image class="navb-img" src="../../../assets/images/icons/ranked.png"></image>
+	    <text class="navb-txt">风云榜</text>
+	</navigator>
+</view>

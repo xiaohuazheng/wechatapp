@@ -1,0 +1,58 @@
+<template name="commentItem">
+    <view class="comment-box">
+        <block wx:for="{{comment}}" wx:for-index="idx" wx:for-item="item" wx:key="unique" data-idx="{{idx}}">
+        <view class="issue-item">
+            <view class="issue-source" bindtap="rUserTap" data-ggid="{{item.userid}}">
+                <view class="issue-user">
+                    <view class="u-head">
+                        <image class="u-head-img" src="{{item.useravatar}}"></image>
+                    </view>
+                    <view class="u-name">{{(page_type == 'getUComments') ? '我' : (item.username)}}</view>
+                </view>
+                <block wx:if="{{page_type == 'getUComments'}}">
+                    <view class="count">{{item.create_at}}</view>
+                    <view class="count dot">{{item.upvote_count}}赞</view>
+                </block>   
+            </view>
+            <view class="issue-ctnt">
+                <view class="issue-body">
+                    <view class="ctnt">
+                        <view class="ctnt-bg">
+                            <text class="ctnt-txt">{{item.content}}</text>
+                        </view>
+                        <view class="reply-bg {{(page_type == 'getAComments' && !item.reply_user_id) ? 'a-bg' : ''}}">
+                            <text class="reply-txt" wx:if="{{item.reply_user_id}}">
+                                <text class="reply-who" data-ggid="{{item.reply_user_id}}" catchtap="rUserTap">@{{item.reply_nick_name}}</text>{{item.reply_content}}
+                            </text>
+                            <view wx:if="{{page_type != 'getAComments'}}" class="issue-article {{item.reply_user_id ? 'reply' : ''}}" bindtap="toShare" data-aid="{{1}}" data-type="{{1}}">
+                              <view class="avatar">
+                                <image mode="aspectFill" class="avatar-img" src="http://wx.qlogo.cn/mmopen/vi_32/4IibMeaXCJiaRTHthwHQGKibwJP0eWOKUIymibUhZgsILacRLibNlFueWHEnKTvFLdxbuTbibMhKKsZnoIjEOfzyxf8g/0"></image>
+                              </view>
+                              <view class="article-info">
+                                <view class="article-author">@111ercurial代表着</view>
+                                <view class="article-title">我的十年dota之路幽鬼诞生于远古世界早期的黑暗幽鬼诞生于远古世界早期的黑暗
+                                </view>
+                                <view class="article-abstract">我的十年dota之路幽鬼诞生于远古世是否自动增高，设置auto-height时，style.height不生效界早期的黑暗幽鬼诞生于远古世界早期的黑暗
+                                </view>    
+                              </view>
+                            </view>
+                        </view>
+                            
+                    </view>
+                    <view class="actions" wx:if="{{page_type != 'getUComments'}}">
+                        <view class="like">{{item.create_at}}</view>
+                        <view class="reply-btn" bindtap="replyComment" data-cid="{{item.id}}" data-aid="{{item.article_id}}" data-ggid="{{item.userid}}" data-ctnt="{{item.content}}" data-ggname="{{item.username}}">
+                            <image class="reply-icon" src="../../../assets/images/reply.png"></image>
+                        </view>
+                        
+                        <view class="like-btns {{item.is_upvote ? 'liked-btn' : 'like-btn'}}" bindtap="{{item.is_upvote ? 'unUpvote' : 'toUpvote'}}" data-type="{{type}}" data-cid="{{item.id}}" data-index="{{idx}}">
+                            <image class="like-icon" src="{{item.is_upvote ? '../../../assets/images/liked.png' : '../../../assets/images/like.png'}}"></image>
+                            <text class="like-num">{{item.upvote_count}}</text>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+        </block>
+    </view>
+</template>

@@ -1,0 +1,39 @@
+<template name="shareItem">
+    <block wx:for="{{share}}" wx:for-index="idx" wx:for-item="item" wx:key="unique">
+        <view class="share-item-box {{item.isTouchMoved ? 'm-active' : ''}}" data-index="{{idx}}" bindtouchstart="{{(isShowDelete || isShowRead) ? 'touchS' : ''}}" bindtouchmove="{{(isShowDelete || isShowRead) ? 'touchM' : ''}}">
+            <view class="share-item" bindtap="toDetail" data-aid="{{item.id}}" data-type="{{item.article_type}}" data-index="{{idx}}">
+                <view class="share-source">
+                    <view class="share-userinfo" catchtap="userHeadTap" data-ggid="{{item.authorId}}">
+                        <view class="u-head">
+                            <image class="u-head-img" src="{{item.authorAvatar}}"></image>
+                        </view>
+                        <view class="user-name">{{item.authorName}}</view>
+                    </view>
+                    <view class="circle-button">{{item.article_type == 1 ? '吐槽' : '分享'}}</view>
+                </view>
+                <view class="share-one-box">
+                    <image class="share-one-pic" mode="aspectFill" wx:if="{{item.title_img}}" src="{{item.title_img}}"></image>
+                    <view class="share-title" sid="{{item.id}}">
+                        <text>{{item.title}}</text>
+                    </view>
+                </view>
+                <view class="share-content">
+                    <view class="share-body">
+                        <view class="descri-content">
+                            <text class="descri-txt">{{item.abstract}}</text>
+                        </view>
+                        <view class="discri-actions">
+                            <view class="like dot circle">{{item.circleName}}</view>
+                            <view class="like dot">{{item.scan_count || 0}}阅读</view>
+                            <view class="like dot">{{item.upvote_count || 0}}喜欢</view>
+                            <view class="like dot">{{item.comment_count || 0}}评论</view>
+                            <view class="like">{{item.create_at || 0}}</view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+            <view wx:if="{{isShowDelete}}" class="del-item delete" catchtap="deleteItem" data-index="{{idx}}" data-aid="{{item.id}}">删除</view>
+            <view wx:elif="{{isShowRead}}" class="del-item read" catchtap="toDetail" data-index="{{idx}}" data-aid="{{item.id}}" data-type="{{item.article_type}}">去阅</view>
+        </view>
+    </block>
+</template>

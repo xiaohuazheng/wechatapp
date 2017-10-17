@@ -1,0 +1,24 @@
+<view class="search-box">
+	<view class="flex-wrp">
+		<view class="search-frame flex-item">
+			<image class="search-icon" src="../../../assets/images/query.png" bindtap="searchTap"></image>
+			<input maxlength="15" confirm-type="search" placeholder="输入关键词，例：DOTA" placeholder-class="search-placeholder" bindfocus="searchFocus" bindinput="searchInput" bindconfirm="searchTap" value="{{searchValue}}"/>
+		</view>
+		<view class="search-button flex-item" bindtap="searchTap">搜索</view>
+	</view>
+	<scroll-view scroll-y="true" wx:if="{{recents.length}}" class="recent-s-pop {{showRecent}}" hidden="{{!showRecent}}" bindtap="closeRecent">
+		<view wx:if="{{recents.length}}" class="recent-title">
+			<text class="title">搜索记录</text>
+			<text class="clear" catchtap="clearRecents">清除</text>
+		</view>
+		<view wx:else class="recent-title"><text class="title">暂无搜索记录</text></view>
+		<block wx:for="{{recents}}" wx:for-index="idx" wx:for-item="item" wx:key="s">
+			<view class="s-item" data-v="{{item}}" catchtap="recentSearch">
+				<view class="s-txt">
+					<text>{{item}}</text>
+					<text class="clear" data-index="{{idx}}" catchtap="deleteRecent">删除</text>
+				</view>
+			</view>
+		</block>
+	</scroll-view>
+</view>

@@ -1,0 +1,3 @@
+<view class="ball e-ball {{showMe ? 'e-ball-on' : ''}}" bindtap="editBallTap">
+    <image src="../../../assets/images/create.png" class="edit-icon" />
+</view>

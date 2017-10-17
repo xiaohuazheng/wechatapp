@@ -1,0 +1,3 @@
+<view hidden="{{!showTopBtn}}" class="ball top-ball" bindtap="topBallTap">
+    <image src="../../../assets/images/gotop.png" class="edit-icon" />
+</view>
