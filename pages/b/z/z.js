@@ -88,7 +88,7 @@ Page({
         });
     },
     onShareAppMessage() {
-        let title = `${(app._user && app._user.nickName || 'GameGuy')} 邀你加入GG游戏圈，我也在，所以更懂你`;
+        let title = `${(app._user && app._user.nickName || 'GameGuy')} 邀你加入GG，我也在，所以更懂你`;
         return app.util.getShareParams(`/pages/b/z/z`, title);
     }
 });

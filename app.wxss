@@ -1,4 +1,4 @@
-/**app.wxss 全局**/
+/** app.wxss 全局 **/
 
 @import 'assets/styles/global.wxss';
 @import 'assets/styles/share.wxss';

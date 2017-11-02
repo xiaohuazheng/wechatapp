@@ -5,7 +5,7 @@
           <image class="avatar-img" src="../../../assets/images/icons/gameed.png"></image>
         </view>
         <view class="user-info flex-item">
-          <text class="nickname gg">GG游戏圈</text>
+          <text class="nickname gg">GG</text>
         </view>
         <view class="user-info flex-item">
           <text class="nickname ggs">{{slogenInfo}}</text>
@@ -19,7 +19,7 @@
 		    </view>
 	    </block>
         
-    	<view class="no-more">©2017-2017 GG游戏圈</view>
+    	<view class="no-more">©2017-2017 GG</view>
     </block>
     <view wx:elif="{{isLoading}}" class="loadingwrapper first-time-loading">
     	<view class="icon_load"></view>

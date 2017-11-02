@@ -15,7 +15,7 @@
     "window": {
         "backgroundTextStyle": "dark",
         "navigationBarBackgroundColor": "#096",
-        "navigationBarTitleText": "GG游戏圈",
+        "navigationBarTitleText": "GG",
         "navigationBarTextStyle": "white",
         "enablePullDownRefresh": false,
         "backgroundColor": "#f2f2f2"

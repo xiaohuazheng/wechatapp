@@ -122,7 +122,7 @@ App({
                 typeof cb == "function" && cb();
             }
         } else {
-            let str = '未登录或登录失效，请允许授权，登录后方可进行用户相关操作';
+            let str = '未登录或登录失效，请重新登录';
             this.util.showModal(str, 0, '', '知道了', () => {
                 this.getUserInfo(() => {
                     this.util.showOkToast('登录成功');

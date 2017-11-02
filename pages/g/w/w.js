@@ -8,7 +8,7 @@ Page({
     onLoad(query) {
         this.query = query;
         app.register('gw', app);
-        let barTitle = query.type == 'score' ? '声望' : (query.type == 'contact' ? '联系我们' : (query.type == 'create' ? '分享吐槽' : 'GG游戏圈'));
+        let barTitle = query.type == 'score' ? '声望' : (query.type == 'contact' ? '联系我们' : (query.type == 'create' ? '分享吐槽' : 'GG'));
         app.util.setPageTitle(barTitle);
         this.getData();
     },
