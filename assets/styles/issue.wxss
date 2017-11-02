@@ -1,0 +1,210 @@
+.issue-item {
+  height: auto;
+  width:690rpx;
+  padding:10rpx 30rpx;
+  margin:20rpx auto 0;
+  background:#fff;
+  position:relative;
+}
+.issue-item .issue-source {
+  width:690rpx;
+  left:0;
+  height:50rpx;
+  overflow:hidden;
+}
+.issue-item .issue-source .issue-user {
+  display:inline-block;
+  height:40rpx;
+  line-height:40rpx;
+}
+.issue-item .issue-source .u-head {
+  position:relative;
+  display:inline-block;
+}
+.issue-item .issue-source .u-head .u-head-img {
+  display:inline-block;
+  width:45rpx;
+  height:45rpx;
+  border-radius:45rpx;
+  top:10rpx;
+  vertical-align:middle;
+}
+.issue-item .issue-source .u-name {
+  display:inline-block;
+  height:40rpx;
+  line-height:40rpx;
+  vertical-align:middle;
+  margin:0 0 0 15rpx;
+  color:#096;
+  font-size:26rpx;
+}
+.issue-item .issue-source .count {
+  display:inline-block;
+  vertical-align:text-bottom;
+  padding:0 10rpx 0 0;
+  font-size:24rpx;
+  float: right;
+  margin-top: 8rpx;
+  color: #acacac;
+}
+.issue-item .issue-source .dot::after {
+  content:"•";
+  margin-left:10rpx;
+  color:#acacac;
+}
+.issue-item .issue-ctnt {
+  width:680rpx;
+}
+.issue-item .issue-ctnt .issue-body{
+  padding: 10rpx 0 0 0;
+  font-size: 26rpx;
+  line-height: 28rpx;
+  color: #555;
+}
+.issue-item .issue-ctnt .ctnt{
+  height:auto;
+  display:block;
+}
+.issue-item .issue-ctnt .ctnt .ctnt-bg{
+  background: #fff;
+  padding: 1% 0 0;
+}
+.issue-item .issue-ctnt .ctnt .ctnt-txt{
+    margin-bottom:10rpx;
+    color: #000;
+    display: block;
+}
+.issue-item .issue-ctnt .actions{
+  width: 690rpx;
+  padding: 10rpx 0  0;
+  color: #acacac;
+}
+.issue-item .issue-ctnt .actions .like{
+  display: inline-block;
+  vertical-align: text-bottom;
+  padding: 0 10rpx 0 0;
+  font-size: 24rpx;
+}
+.issue-item .issue-ctnt .ctnt .reply-bg{
+  background: #eee;
+  padding: 1% 0;
+}
+.issue-item .issue-ctnt .ctnt .reply-bg.a-bg{
+  padding: 0;
+}
+.issue-item .issue-ctnt .ctnt .reply-txt{
+    color: #666;
+    margin-top: 10rpx;
+}
+.issue-item .issue-ctnt .ctnt .reply-who{
+    color: #096;
+    display: inline-block;
+    margin-right: 10rpx;
+    margin-left:40rpx;
+}
+.issue-item .issue-ctnt .issue-article {
+  position: relative;
+  width: 98%;
+  padding: 0;
+  margin: 0 auto;
+  clear:both;
+  overflow:hidden;
+}
+.issue-item .issue-ctnt .issue-article.reply {
+  margin-top: 10rpx;
+  background: #fff;
+}
+.issue-item .issue-ctnt .issue-article .avatar {
+  float: left;
+}
+.issue-item .issue-ctnt .issue-article .avatar .avatar-img {
+  width: 160rpx;
+  height: 160rpx;
+  display: block;
+}
+.issue-item .issue-ctnt .issue-article .article-info {
+  position: relative;
+  margin-left: 30rpx;
+  float: left;
+  height: 160rpx;
+}
+.issue-item .issue-ctnt .issue-article .article-author {
+  font-size: 28rpx;
+  width: 440rpx;
+  margin-top: 10rpx;
+  overflow:hidden;
+  color: #096;
+}
+.issue-item .issue-ctnt .issue-article .article-title{
+  font-size: 26rpx;
+  width: 440rpx;
+  height: 30rpx;
+  margin-top: 15rpx;
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  display:block;
+  color: #000;
+}
+.issue-item .issue-ctnt .issue-article .article-abstract {
+  font-size: 24rpx;
+  width: 440rpx;
+  margin-top: 10rpx;
+  height: 66rpx;
+  line-height: 35rpx;
+  display:-webkit-box;
+  display:-moz-box;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  word-break:break-all;
+  -webkit-box-orient:vertical;
+  -webkit-line-clamp:2;
+  white-space:normal;
+}
+.issue-item .issue-ctnt .actions .reply-btn{
+    float:right;
+    text-align:center;
+    width:60rpx;
+    height:32rpx;
+    padding:0;
+    font-size: 30rpx;
+    color: #096;
+    margin-top:-6rpx;
+}
+.issue-item .issue-ctnt .actions .reply-btn .reply-icon{
+    width:44rpx;
+    height:44rpx;
+    margin-top:4rpx;
+}
+.issue-item .issue-ctnt .actions .like-btns{
+    float:right;
+    text-align:center;
+    width:auto;
+    height:32rpx;
+    padding:0;
+    margin-right:15rpx;
+    font-size: 30rpx;
+    color: #999;
+    margin-top: 6rpx;
+}
+.issue-item .issue-ctnt .actions .like-btns .like-icon {
+    width:34rpx;
+    height:34rpx;
+    margin-top:-4rpx;
+}
+.issue-item .issue-ctnt .actions .like-btn .like-icon {
+    width:34rpx;
+    height:34rpx;
+    margin-top:-4rpx;
+}
+.issue-item .issue-ctnt .actions .liked-btn {
+    color: #096;
+}
+.issue-item .issue-ctnt .actions .like-num {
+    float: right;
+}
+.issue-item .issue-ctnt .actions .dot::after{
+  content: "•";
+  margin-left: 10rpx;
+  color:#acacac;
+}

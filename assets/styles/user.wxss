@@ -1,0 +1,58 @@
+.user {
+  width: 750rpx;
+}
+.user-bg{
+  position:relative;
+  padding:1rpx 0;
+  background:rgba(0, 153, 97, 0.8);
+}
+.user-bg.user-bg-z {
+  background: -webkit-linear-gradient(top, rgba(0, 153, 97, 0.9), rgba(0, 153, 97, 0));
+  background: -o-linear-gradient(top, rgba(0, 153, 97, 0.9), rgba(0, 153, 97, 0));
+  background: linear-gradient(to bottom, rgba(0, 153, 97, 0.9), rgba(0, 153, 97, 0));
+}
+.user-bg.user-bg-g {
+  background: -webkit-linear-gradient(top, rgba(0, 153, 97, 0.9), rgba(0, 153, 97, 0.6));
+  background: -o-linear-gradient(top, rgba(0, 153, 97, 0.9), rgba(0, 153, 97, 0.6));
+  background: linear-gradient(to bottom, rgba(0, 153, 97, 0.9), rgba(0, 153, 97, 0.6));
+}
+.user .avatar{
+  margin-top: 50rpx;
+  position:relative;
+}
+.user .avatar-img{
+  flex: 1;
+  display: inline-block;
+  width: 140rpx;
+  height: 140rpx;
+  border-radius: 100%;
+}
+.user .user-info{
+  flex: 5;
+  text-align: center;
+}
+.user .user-info .nickname{
+  display: block;
+  padding: 8rpx 0 10rpx 0;
+  font-size: 30rpx;
+  color: #fff;
+}
+.user .user-btn{
+  display: -webkit-flex;
+  display: flex;
+  margin: 30rpx 0;
+}
+.user .user-btn .user-btn-item {
+  flex: 1;
+  font-size: 30rpx;
+  color: #666;
+  display: inline-block;
+  text-align: center;
+}
+.user .user-btn .grey{
+  color: #ddd;
+}
+.user .user-btn .light{
+  color: #fff;
+  line-height: 44rpx;
+}
