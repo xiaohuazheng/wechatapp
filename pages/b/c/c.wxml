@@ -9,7 +9,7 @@
             <image mode="aspectFill" class="circle-img" src="{{item.icon}}"></image>
           </view>
           <view class="circle-con">
-            <view class="circle-abstract">分享Carry经验，Gank心得，团战攻略，游戏资讯。倾听大神多年DOTA旅程，那年，那战，那队友。天辉夜宴，三路拼杀，回头，泯然一笑，带上宝石，向前，开战！</view>
+            <view class="circle-abstract">{{item.description}}</view>
             <view class="btn-box">
               <view class="in-btn">进入圈子</view>
             </view>       

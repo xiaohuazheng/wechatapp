@@ -145,19 +145,7 @@ Page({
             "commentCount": 11,
             "scoreCount": 323
         }],
-        circles: [{
-            id: 'default',
-            name: '总榜'
-        }, {
-            id: '1',
-            name: '总榜'
-        }, {
-            id: '2',
-            name: '总榜'
-        }, {
-            id: '3',
-            name: '总榜'
-        }],
+        circles: [],
         windowWidth: 375,
         navIdxs: [],
         scrollLeft: 0,
@@ -189,8 +177,8 @@ Page({
                 _this.getCurRankId();
             });
         }
-        //_this.getCurRankId();
-        //_this.data.navIdxs = Array.from(Array(_this.data.circles.length).keys());
+        _this.getCurRankId();
+        _this.data.navIdxs = Array.from(Array(_this.data.circles.length).keys());
     },
     getCurRankId() {
         let circleId = app.cache.cur_rank_cirlce_id || 'default';

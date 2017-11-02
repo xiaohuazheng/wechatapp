@@ -24,7 +24,13 @@ Page({
             type: 0
         }],
         curSort: 5,
-        banners: [],
+        banners: [{
+            url: '../../b/a/a?aid=1&type=2',
+            img: '../../../assets/images/400x140.test.jpg'
+        }, {
+            url: '../../b/a/a?aid=1&type=2',
+            img: '../../../assets/images/400x140.test.jpg'
+        }],
         mine: [{
             url: '../../u/f/f?type=favorite',
             img: '../../../assets/images/gameed.png',

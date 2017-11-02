@@ -4,25 +4,12 @@ let app = getApp();
 Page({
     data: {
         shareObj: {
-            share: [{
-                id: 1,
-                name: '飞电风扇',
-                icon: '../../../assets/images/400x140.test.jpg'
-            }, {
-                id: 1,
-                name: '飞电风扇'
-            }, {
-                id: 1,
-                name: '飞电风扇'
-            }, {
-                id: 1,
-                name: '飞电风扇'
-            }]
+            share: []
         }
     },
     onLoad() {
         app.register('bc', app);
-        //this.getData('new');
+        this.getData('new');
     },
     getData() {
         let _this = this;
